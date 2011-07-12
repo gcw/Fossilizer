@@ -1,0 +1,105 @@
+{{left_sidebar_enabled=right_sidebar_enabled=False}}
+{{extend 'layout.html'}}
+{{import os.path}}
+ <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+
+<script>
+  $(document).ready(function() {
+    $("#tabs").tabs();
+  });
+</script>
+
+{{if 'message' in globals():}}
+
+<h1>{{=message}}</h1>
+
+<hr />
+<div id="tabs">
+    <ul>
+        <li><a href="#public"><span>public</span></a></li>
+        {{if len(my_fossils) > 0: }}
+            <li><a href="#mine"><span>mine</span></a></li>
+            {{pass}}
+    </ul>
+    <div id="public" class="list_block">
+    {{if len(public_fossils) > 0: }}
+        {{for fossil in public_fossils:}}
+            {{fossil.is_active = os.path.exists(fossil.link_path)}}
+            <div class="list_row">
+                <span class="list_entry" id="project_name">
+                    {{if fossil.is_active:}}
+                        {{=A(fossil.project_name,_href=fossil.repo_url)}}
+                    {{else:}}
+                        {{=A(fossil.project_name,)}}
+                        {{pass}}
+                </span>
+                <span class="list_entry" id="description">
+                    {{=fossil.description or ''}}
+                </span>
+                <span class="list_entry" id="created_on">
+                    {{ created_on=str(fossil.created_on) }}
+                    {{=created_on[:16]}}
+                </span>
+                <span class="list_entry" id="owner">
+                    {{=db.auth_user[fossil.owner].user_handle}}
+                </span>
+                <span class="list_entry" id="is_active">
+                    {{if fossil.is_active :}}
+                        {{=SPAN("Active")}}
+                    {{else:}}
+                        {{=SPAN("Inactive")}}
+                        {{pass}}
+                </span>
+            </div>
+        {{pass #This pass if for the 'for' loop}}
+    {{else:}}
+        {{P("No Public Fossils listed")}}
+        {{pass #unambiguous end of if/else block}}
+    </div>
+    <div id="mine" class="list_block">
+    {{if len(my_fossils) > 0: }}
+            {{for fossil in my_fossils:}}
+                {{fossil.is_active = os.path.exists(fossil.link_path)}}
+                <div class="list_row">
+                    <span class="list_entry" id="project_name">
+                        {{if fossil.is_active:}}
+                            {{=A(fossil.project_name,_href=fossil.repo_url)}}
+                        {{else:}}
+                            {{=A(fossil.project_name,)}}
+                            {{pass}}
+                    </span>
+                    <span class="list_entry" id="description">
+                        {{=fossil.description or ''}}
+                    </span>
+                    <span class="list_entry" id="project_url">
+                        {{if auth.user_id == fossil.owner:}}
+                            {{=A('manage', _href=URL('fossil',
+                                                    args=fossil.id))}}
+                            {{pass}}
+                    </span>
+                    <span class="list_entry" id="created_on">
+                        {{ created_on=str(fossil.created_on) }}
+                        {{=created_on[:16]}}
+                    </span>
+                    <span class="list_entry" id="is_active">
+                        {{if fossil.is_active :}}
+                            {{=SPAN("Active")}}
+                        {{else:}}
+                            {{=SPAN("Inactive")}}
+                            {{pass}}
+                    </span>
+                </div>
+            {{pass #This pass is for the 'for' loop}}
+    </div>
+        {{pass}}
+</div>
+
+{{else:}}
+{{=BEAUTIFY(response._vars)}}
+{{pass}}
+
+{{block left_sidebar}}New Left Sidebar Content{{end}}
+{{block right_sidebar}}New Right Sidebar Content{{end}}

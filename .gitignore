@@ -1,0 +1,10 @@
+.hg
+_FOSSIL_
+*.fossil
+*.swp
+cache/*
+databases/*
+errors/*
+sessions/*
+tickets/*
+uploads/*

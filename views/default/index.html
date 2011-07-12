@@ -1,0 +1,16 @@
+{{left_sidebar_enabled=right_sidebar_enabled=False}}
+{{extend 'layout.html'}}
+
+{{if 'message' in globals():}}
+
+<h1>{{=message}}</h1>
+
+Fossilizer is a service for hosting projects that make use of the 
+<a href="http://www.fossil-scm.org" target="new">Fossil SCM</a>. 
+
+{{else:}}
+{{=BEAUTIFY(response._vars)}}
+{{pass}}
+
+{{block left_sidebar}}New Left Sidebar Content{{end}}
+{{block right_sidebar}}New Right Sidebar Content{{end}}
