@@ -5,7 +5,7 @@ Fossilizer is a simple fossil-scm hosting application. It's designed to facilita
 If you're not familiar with fossil and how it works this is not for you. 
 
 <h2>More Information</h2>
-This project is self-hosted on the Secution, Inc. fossil server at [http://fossil.secution.com/u/gcw/fossilizer|http://fossil.secution.com/u/gcw/fossilizer]. The repository is open, meaning that anyone can join and you don't need to log in to clone, checkout or browse the file tree. 
+This project is self-hosted on the Secution, Inc. fossil server at [http://fossil.secution.com/u/gcw/fossilizer]. The repository is open, meaning that anyone can join and you don't need to log in to clone, checkout or browse the file tree. 
 
 <h2>Note if you're reading this on github</h2>
 Git is not my SCM/VCS/CVS/RCS/* of choice (that should not be a surprise).  I use github to make code more accessible to a wider audience. This project was started in fossil and the idea of bringing it to github was a far after thought. As a result, the history of the project was not imported into git. All of the history can be seen by cloning from the fossil repository (<code>fossil clone http://fossil.secution.com/u/gcw/fossilizer fossilizer.fossil ; fossil open fossilizer.fossil</code>) which is primary and the github repository is secondary (but they should be kept in sync for the most part).
