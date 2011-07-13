@@ -15,7 +15,7 @@ Fossilizer is licensed under a 2-Clause BSD license. Any contributions must be m
 
 <h2>Documentation</h2>
   *  [./LICENSE|License and Copyright] 
-  *  [./doc/requirements.html|requirements] 
-  *  [./doc/installation.html|installation] 
-  *  [./doc/webservers.html|webservers] 
-  *  [./doc/todo.html|todo] 
+  *  [./doc/requirements.wiki|requirements] 
+  *  [./doc/installation.wiki|installation] 
+  *  [./doc/webservers.wiki|webservers] 
+  *  [./doc/todo.wiki|todo] 
