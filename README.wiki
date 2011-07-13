@@ -1,4 +1,4 @@
-Note: I'm not a fan of documentation in HTML but I refuse to reformat this documentation for every SCM where it's hosted. I host locally on the Secution, Inc. Fossil server and mirror to github. Github doesn't recognize Fossil's .wiki format and Fossil doesn't parse Markdown or (Re)Structured Text.  Documentation in Plain text would mean no hyper linking, so, sorry you're stuck with html.
+Note: The documentation in this repository is formatted using the fossil-scm wiki formatting rules which happens to be very close to a subset of the wikimedia format. Where there are incompatibilities I go with fossil. If you're reading this on Github, links may not work properly.
 
 <h1>Welcome to Fossilizer</h1>
 Fossilizer is a simple fossil-scm hosting application. It's designed to facilitate the hosting of multiple fossil repositories with a web-interface. 
