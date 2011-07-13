@@ -1,29 +1,21 @@
-<em>Note: I'm not a fan of documentation in HTML but I refuse to reformat this documentation for every SCM where it's hosted. I host locally on the Secution, Inc. Fossil server and mirror to github. Github doesn't recognize Fossil's .wiki format and Fossil doesn't parse Markdown or (Re)Structured Text.  Documentation in Plain text would mean no hyper linking, so, sorry you're stuck with html. </em>
+Note: I'm not a fan of documentation in HTML but I refuse to reformat this documentation for every SCM where it's hosted. I host locally on the Secution, Inc. Fossil server and mirror to github. Github doesn't recognize Fossil's .wiki format and Fossil doesn't parse Markdown or (Re)Structured Text.  Documentation in Plain text would mean no hyper linking, so, sorry you're stuck with html.
 
 <h1>Welcome to Fossilizer</h1>
-<p>Fossilizer is a simple fossil-scm hosting application. It's designed to facilitate the hosting of multiple fossil repositories with a web-interface. 
-</p>
-<p>If you're not familiar with fossil and how it works this is not for you. </p>
+Fossilizer is a simple fossil-scm hosting application. It's designed to facilitate the hosting of multiple fossil repositories with a web-interface. 
+If you're not familiar with fossil and how it works this is not for you. 
 
 <h2>More Information</h2>
-<p>This project is self-hosted on the Secution, Inc. fossil server at <a href="http://fossil.secution.com/u/gcw/fossilizer">http://fossil.secution.com/u/gcw/fossilizer</a>. The repository is open, meaning that anyone can join and you don't need to log in to clone, checkout or browse the file tree. 
-</p>
+This project is self-hosted on the Secution, Inc. fossil server at [http://fossil.secution.com/u/gcw/fossilizer|http://fossil.secution.com/u/gcw/fossilizer]. The repository is open, meaning that anyone can join and you don't need to log in to clone, checkout or browse the file tree. 
 
 <h2>Note if you're reading this on github</h2>
-<p>
 Git is not my SCM/VCS/CVS/RCS/* of choice (that should not be a surprise).  I use github to make code more accessible to a wider audience. This project was started in fossil and the idea of bringing it to github was a far after thought. As a result, the history of the project was not imported into git. All of the history can be seen by cloning from the fossil repository (<code>fossil clone http://fossil.secution.com/u/gcw/fossilizer fossilizer.fossil ; fossil open fossilizer.fossil</code>) which is primary and the github repository is secondary (but they should be kept in sync for the most part).
-</p>
 
 <h2>Contributing</h2>
-<p>
 Fossilizer is licensed under a 2-Clause BSD license. Any contributions must be made under a compatible license for packaging and redistribution with fossilizer.
-</p>
 
 <h2>Documentation</h2>
-<ul>
-    <li> <a href="./LICENSE">License and Copyright</a> </li>
-    <li> <a href="./doc/requirements.html">requirements</a> </li>
-    <li> <a href="./doc/installation.html">installation</a> </li>
-    <li> <a href="./doc/webservers.html">webservers</a> </li>
-    <li> <a href="./doc/todo.html">todo</a> </li>
-</ul>
+  *  [./LICENSE|License and Copyright] 
+  *  [./doc/requirements.html|requirements] 
+  *  [./doc/installation.html|installation] 
+  *  [./doc/webservers.html|webservers] 
+  *  [./doc/todo.html|todo] 
