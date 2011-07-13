@@ -1,8 +1,6 @@
 <h1>Fossilizer Installation</h1>
-    <ol>
-        <li>Download and install web2py</li>
-        <li>Make sure you have the python sqlite3 installed and configured</li>
-        <li>Place the fossilizer/ directory under your web2py applications directory</li>
-        <li>Configure your <a href="./webservers.html">webserver</a></li>
-        <li>Profit</li>
-    </ol>
+  #  Download and install web2py
+  #  Make sure you have the python sqlite3 installed and configured
+  #  Place the fossilizer/ directory under your web2py applications directory
+  #  Configure your [./webservers.html|webserver]
+  #  Profit
