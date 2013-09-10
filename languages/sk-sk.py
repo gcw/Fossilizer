@@ -77,15 +77,15 @@
 'You visited the url': 'Navštívili ste URL',
 'appadmin is disabled because insecure channel': 'appadmin je zakázaný bez zabezpečeného spojenia',
 'cache': 'cache',
-'click here for online examples': 'pre online príklady kliknite sem',
-'click here for the administrative interface': 'pre administrátorské rozhranie kliknite sem',
+'Online examples': 'pre online príklady kliknite sem',
+'Administrative interface': 'pre administrátorské rozhranie kliknite sem',
 'customize me!': 'prispôsob ma!',
 'data uploaded': 'údaje naplnené',
 'database': 'databáza',
 'database %s select': 'databáza %s výber',
 'db': 'db',
 'design': 'návrh',
-'documentation': 'dokumentácia',
+'Documentation': 'Dokumentácia',
 'done!': 'hotovo!',
 'export as csv file': 'exportovať do csv súboru',
 'insert new': 'vložiť nový záznam ',
@@ -109,3 +109,4 @@
 'table': 'tabuľka',
 'unable to parse csv file': 'nedá sa načítať csv súbor',
 }
+

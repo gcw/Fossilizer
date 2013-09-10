@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*- 
-
 #########################################################################
 ## This is a samples controller
 ## - index is the default action of any application
@@ -81,6 +80,7 @@ def create():
     return dict(message=T(message), form=form)
 
 def fossils():
+    '''...'''
     #mechanism = request.args(0)
     #if mechanism == "mine" and auth.user_id:
     #    message = db.auth_user[auth.user_id].user_handle+'\'s Fossils'
@@ -93,11 +93,14 @@ def fossils():
                 my_fossils=my_fossils)
 
 def fossil():
-    #Function to display fossil entry
+    """
+    This controller/action is used to display the fossil. 
+    """
     fossil_id = request.args(0) or redirect(URL('index'))
     fossil_record = db.fossil(fossil_id) or redirect(URL('index'))
     #fossil_record = db(db.fossil.id==fossil_id).select().first()
     is_active = False
+    i_own = ( auth.user_id == fossil_record['owner'] )
     if auth.user_id == fossil_record['owner']:
         is_active = os.path.exists(fossil_record.link_path)
         db.fossil.file.writable=False
@@ -113,7 +116,7 @@ def fossil():
                         fossil_record.user_index)
             redirect(URL(a='fossilizer',c='default',f='fossil',
                             args=[fossil_record.id]))
-        if request.args(1) == "unlink":
+        if request.args(1) == "unlink" and i_own:
             unlink_manage(fossil_record.link_path)
             redirect(URL(a='fossilizer',c='default',f='fossil',
                             args=[fossil_record.id]))
@@ -127,8 +130,9 @@ def fossil():
                 fossil=fossil_record, is_active=is_active)
 
 def link_manage(true_file, link_path, user_index):
-    link_exists = os.path.islink(link_path)
-    f=true_file.split('.')
+    ''' '''
+    #link_exists = os.path.isfile(link_path)
+    f = true_file.split('.')
     true_path=os.path.join(request.folder,'uploads',
                             '%s.%s'%(f[0],f[1]),
                             '%c%c'%(f[2][0],f[2][1]),
@@ -136,8 +140,9 @@ def link_manage(true_file, link_path, user_index):
                             )
     if not os.path.isdir(os.path.dirname(link_path)):
         os.makedirs(os.path.dirname(link_path))
-    if not os.path.islink(link_path):
-        os.symlink(true_path, link_path)
+    if not os.path.isfile(link_path):
+        #os.symlink(true_path, link_path)
+        os.link(true_path, link_path)
     if not os.path.isdir(os.path.dirname(user_index)):
         os.makedirs(os.path.dirname(user_index))
     if not os.path.isfile(user_index):
@@ -150,15 +155,18 @@ def link_manage(true_file, link_path, user_index):
     return True
 
 def unlink_manage(link_path):
-    if os.path.islink(link_path):
+    ''' '''
+    if os.path.isfile(link_path):
         os.unlink(link_path)
     
 
 def delete_proc(form):
+    ''' '''
     unlink_manage(form.vars.link_path) #unlink file after removing fossil record
     return True
     
 def upload_proc(form):
+    ''' '''
     form.vars.created_on = request.now #set time stamp properly
     fmarker = form.vars.file.file.read(15)
     form.vars.file.file.seek(0)         #reset the cursor in the file to 0
@@ -169,6 +177,7 @@ def upload_proc(form):
     return True
 
 def upload_post_proc(form):
+    ''' '''
     true_file = str(form.vars.file_newfilename)
     link_path = str(db.fossil[form.vars.id].link_path)
     user_index = str(db.fossil[form.vars.id].user_index)
@@ -177,14 +186,21 @@ def upload_post_proc(form):
     return True
 
 def clone_proc(form):
+    ''' '''
     form.vars.created_on = request.now #set time stamp properly
     return True
 
 def clone_post_proc(form):
+    ''' '''
     return True
 
 def scratch_proc(form):
+    ''' '''
     form.vars.created_on = request.now #set time stamp properly
 
 def scratch_post_proc(form):
+    ''' '''
     return True
+
+def test():
+    return dict(message=T('Welcome to Fossilizer'))

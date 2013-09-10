@@ -61,8 +61,8 @@
 'appadmin is disabled because insecure channel': 'az appadmin a biztons\xc3\xa1gtalan csatorna miatt letiltva',
 'cache': 'gyors\xc3\xadt\xc3\xb3t\xc3\xa1r',
 'change password': 'jelsz\xc3\xb3 megv\xc3\xa1ltoztat\xc3\xa1sa',
-'click here for online examples': 'online p\xc3\xa9ld\xc3\xa1k\xc3\xa9rt kattints ide',
-'click here for the administrative interface': 'az adminisztr\xc3\xa1ci\xc3\xb3s fel\xc3\xbclet\xc3\xa9rt kattints ide',
+'Online examples': 'online p\xc3\xa9ld\xc3\xa1k\xc3\xa9rt kattints ide',
+'Administrative interface': 'az adminisztr\xc3\xa1ci\xc3\xb3s fel\xc3\xbclet\xc3\xa9rt kattints ide',
 'customize me!': 'v\xc3\xa1ltoztass meg!',
 'data uploaded': 'adat felt\xc3\xb6ltve',
 'database': 'adatb\xc3\xa1zis',
@@ -91,3 +91,4 @@
 'table': 't\xc3\xa1bla',
 'unable to parse csv file': 'nem lehet a csv f\xc3\xa1jlt beolvasni',
 }
+

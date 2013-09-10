@@ -149,8 +149,8 @@
 'change password': 'cambie contraseña',
 'check all': 'marcar todos',
 'clean': 'limpiar',
-'click here for online examples': 'Haga clic aquí para ver ejemplos en línea',
-'click here for the administrative interface': 'Haga clic aquí para usar la interfaz administrativa',
+'Online examples': 'Ejemplos en línea',
+'Administrative interface': 'Interfaz administrativa',
 'click to check for upgrades': 'haga clic para buscar actualizaciones',
 'compile': 'compilar',
 'compiled application removed': 'aplicación compilada removida',
@@ -169,7 +169,7 @@
 'delete': 'eliminar',
 'delete all checked': 'eliminar marcados',
 'design': 'modificar',
-'documentation': 'documentación',
+'Documentation': 'Documentación',
 'done!': 'listo!',
 'edit': 'editar',
 'edit controller': 'editar controlador',
@@ -257,3 +257,4 @@
 'web2py Recent Tweets': 'Tweets Recientes de web2py',
 'web2py is up to date': 'web2py está actualizado',
 }
+

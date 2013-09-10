@@ -70,8 +70,8 @@
 'appadmin is disabled because insecure channel': 'appadmin está desactivada pois o canal é inseguro',
 'cache': 'cache',
 'change password': 'alterar palavra-chave',
-'click here for online examples': 'Clique aqui para exemplos online',
-'click here for the administrative interface': 'Clique aqui para o painel administrativo',
+'Online examples': 'Exemplos online',
+'Administrative interface': 'Painel administrativo',
 'create new category': 'create new category',
 'create new comment': 'create new comment',
 'create new post': 'create new post',
@@ -114,3 +114,4 @@
 'table': 'tabela',
 'unable to parse csv file': 'não foi possível carregar ficheiro csv',
 }
+

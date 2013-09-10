@@ -50,8 +50,8 @@
 'appadmin is disabled because insecure channel': 'appadmin is disabled because insecure channel',
 'cache': 'cache',
 'change password': 'change password',
-'click here for online examples': 'Kliknij aby przej\xc5\x9b\xc4\x87 do interaktywnych przyk\xc5\x82ad\xc3\xb3w',
-'click here for the administrative interface': 'Kliknij aby przej\xc5\x9b\xc4\x87 do panelu administracyjnego',
+'Online examples': 'Kliknij aby przej\xc5\x9b\xc4\x87 do interaktywnych przyk\xc5\x82ad\xc3\xb3w',
+'Administrative interface': 'Kliknij aby przej\xc5\x9b\xc4\x87 do panelu administracyjnego',
 'customize me!': 'dostosuj mnie!',
 'data uploaded': 'dane wys\xc5\x82ane',
 'database': 'baza danych',
@@ -79,3 +79,4 @@
 'table': 'tabela',
 'unable to parse csv file': 'nie mo\xc5\xbcna sparsowa\xc4\x87 pliku csv',
 }
+

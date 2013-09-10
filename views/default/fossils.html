@@ -1,30 +1,26 @@
 {{left_sidebar_enabled=right_sidebar_enabled=False}}
 {{extend 'layout.html'}}
 {{import os.path}}
+ <!-- comment out the insecure css loads
  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+ -->
   
-
-<script>
-  $(document).ready(function() {
-    $("#tabs").tabs();
-  });
-</script>
 
 {{if 'message' in globals():}}
 
 <h1>{{=message}}</h1>
 
 <hr />
-<div id="tabs">
-    <ul>
-        <li><a href="#public"><span>public</span></a></li>
-        {{if len(my_fossils) > 0: }}
-            <li><a href="#mine"><span>mine</span></a></li>
-            {{pass}}
+
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#public" data-toggle="tab"><span>public</span></a></li>
+        <li><a href="#mine" data-toggle="tab"><span>mine</span></a></li>
     </ul>
-    <div id="public" class="list_block">
+  <div class="tab-content">
+    <div id="public" class="tab-pane active">
     {{if len(public_fossils) > 0: }}
         {{for fossil in public_fossils:}}
             {{fossil.is_active = os.path.exists(fossil.link_path)}}
@@ -53,13 +49,13 @@
                         {{=SPAN("Inactive")}}
                         {{pass}}
                 </span>
-            </div>
+            </div> <!-- /.list_row -->
         {{pass #This pass if for the 'for' loop}}
     {{else:}}
         {{P("No Public Fossils listed")}}
         {{pass #unambiguous end of if/else block}}
-    </div>
-    <div id="mine" class="list_block">
+    </div> <!-- ./tab-pane -->
+    <div id="mine" class="tab-pane">
     {{if len(my_fossils) > 0: }}
             {{for fossil in my_fossils:}}
                 {{fossil.is_active = os.path.exists(fossil.link_path)}}
@@ -91,11 +87,30 @@
                             {{=SPAN("Inactive")}}
                             {{pass}}
                     </span>
-                </div>
+                </div> <!-- /.list_row -->
             {{pass #This pass is for the 'for' loop}}
-    </div>
-        {{pass}}
+    {{elif auth.user_id:}}
+           <p>C'mon man, add some fossils</p>
+    {{else:}}
+        <h2>Login to create/view fossil repos of your own </h2>
+	{{form=auth()}}
+<div id="web2py_user_form">
+{{=form}}
+{{if request.args(0)=='login':}}
+{{if not 'register' in auth.settings.actions_disabled:}}
+<br/><a href="{{=URL(r=request,args='register')}}">register</a>
+{{pass}}
+{{if not 'request_reset_password' in auth.settings.actions_disabled:}}
+<br/><a href="{{=URL(r=request,args='request_reset_password')}}">lost password</a>
+{{pass}}
+{{pass}}
 </div>
+
+
+        {{pass}}
+    </div> <!-- /.tab-pane -->
+  </div> <!-- /.tab-content -->
+</div> <!-- /.tabbable -->
 
 {{else:}}
 {{=BEAUTIFY(response._vars)}}

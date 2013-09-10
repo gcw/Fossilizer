@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*- 
+#global db
+#global request
+#global session
+#global response
 
 #########################################################################
 ## This scaffolding model makes your app work on Google App Engine too

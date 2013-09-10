@@ -66,8 +66,8 @@
 'User ID': 'ID пользователя',
 'Verify Password': 'Повторите пароль',
 'Welcome to web2py': 'Добро пожаловать в web2py',
-'click here for online examples': 'примеры он-лайн',
-'click here for the administrative interface': 'административный интерфейс',
+'Online examples': 'примеры он-лайн',
+'Administrative interface': 'административный интерфейс',
 'customize me!': 'настройте внешний вид!',
 'data uploaded': 'данные загружены',
 'database': 'база данных',
@@ -94,3 +94,4 @@
 'table': 'таблица',
 'unable to parse csv file': 'нечитаемый csv-файл',
 }
+
