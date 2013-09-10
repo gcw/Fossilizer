@@ -1,0 +1,32 @@
+/*
+*Custom CSS for Fossilizer
+*/
+div.list_block{
+    display: table;
+    font-size:90%;
+}
+
+span.list_row{
+    display: table-row;
+    width: 100%;
+}
+
+span.list_entry{
+    overflow: wrap;
+    padding-left: 2px ;
+    padding-right: 1px ;
+    display: table-cell;
+    border-bottom: 1px gray solid;
+}
+
+span.list_entry#project_name{
+    width: 18em;
+}
+
+span.list_entry#description{
+    width: 32em;
+}
+
+span.list_entry#project_url{
+    width: 4em;
+}
